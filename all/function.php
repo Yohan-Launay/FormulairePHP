@@ -11,3 +11,5 @@ function connexion()
 
 	return $connexion;
 }
+
+?>

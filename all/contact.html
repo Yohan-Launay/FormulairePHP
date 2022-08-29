@@ -1,0 +1,20 @@
+<h2 <?php if (isset($visible)) {echo $visible;} ?>>Contactez moi ! 📨</h2>
+<form <?php if (isset($visible)) {echo $visible;} ?> action="front.php?p=contact#contact" method="POST">
+    <?php if (isset($message['nom'])) {echo $message['nom'];} ?>
+    <input placeholder="Nom" type="text" value="<?php if (isset($_POST['nom'])) {echo $_POST['nom'];} ?>" name="nom">
+
+    <?php if (isset($message['prenom'])) {echo $message['prenom'];} ?>
+    <input placeholder="Prénom" type="text" value="<?php if (isset($_POST['prenom'])) {echo $_POST['prenom'];} ?>" name="prenom">
+
+
+    <?php if (isset($message['mel'])){echo $message['mel'];}  ?>
+    <input placeholder="Mail" type="text" value="<?php if (isset($_POST['mel'])) {echo $_POST['mel'];} ?>" name="mel">
+
+
+    <textarea name="message" placeholder="Message"><?php if (isset($_POST['message'])) {echo $_POST['message'];} ?></textarea>
+    <input type="submit" value="ENVOYER" name="submit">
+</form>
+
+<?php if (isset($merci)) {echo $merci;} ?>
+
+
